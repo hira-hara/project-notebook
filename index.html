@@ -1,0 +1,732 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Group M - Project Notebook</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 111, 200, 0.09);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(232, 242, 250, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 99, 174, 0.172); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2815bae0-dc9d-8032-9db4-e7ec9b183164" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_transonic_tunnel.jpg" style="object-position:center 60%"/><h1 class="page-title">Group M - Project Notebook</h1><p class="page-description"></p></header><div class="page-body"><h1 id="2815bae0-dc9d-80f9-bc03-fa26728f2b3c" class="">Observations &amp; Proposal</h1><h2 id="2815bae0-dc9d-8088-ae2a-c96711238e68" class="">Observations</h2><ol type="1" id="2815bae0-dc9d-8048-ab97-ce7b0a238862" class="numbered-list" start="1"><li><mark class="highlight-purple_background">The morning phone spiral</mark></li></ol><p id="2815bae0-dc9d-800f-92af-e567e42782ba" class="">Living with roommates and staying-over at friends&#x27; places has given us a front-row seat to how our peers in their early to mid-20s kick off their mornings. One roommate, a recent graduate working her first full-time job, told us that she sets multiple alarms on her phone starting at 6:30AM. Rather than getting up when the first alarm goes off, she checks her calendar and then feels compelled to start scrolling. She spends 30-45 minutes lying in bed absorbed on her phone scrolling through Instagram and TikTok. When she finally gets up, she takes her phone with her to the bathroom and props it against the toiletries by the mirror. While doing her makeup, she said her attention shifts between the mirror and her screen. She said she would check the time or weather and then a notification from Instagram would draw her attention eventually leading her to spend more tim ethan she anticipated.</p><p id="2815bae0-dc9d-80a8-b7f4-cd25861d186e" class="">
+</p><ol type="1" id="2815bae0-dc9d-8098-a139-fe04fd8ec26e" class="numbered-list" start="2"><li><mark class="highlight-purple_background">Interviewing International Student - Ida’s Roommate</mark></li></ol><p id="2815bae0-dc9d-806c-b282-c818de19bbd3" class="">Talking with and observing my international friend and roommate gave me a different perspective on how her morning routine is set up. Because her families timezone is different. When her alarm is sound and she picks it up to check the time. She is bombarded by text messages of her families and friends from back home. Either be it Instagram, Snapchat, Whatsupp etc…she is drawn to al of those apps before getting ready. While brushing her teeth she says she doesn’t want to waste time so she looks at her phone while doing other tasks. Since this is a reccurring event, she did not notice if her awareness or attention was shortened but she does have to rush out almost everyday I noticed. </p><p id="2815bae0-dc9d-809c-8560-fc31e8e36935" class="">
+</p><ol type="1" id="2815bae0-dc9d-80be-83cf-d4da3e0036a6" class="numbered-list" start="3"><li><mark class="highlight-purple_background">Trying a no-phone approach</mark></li></ol><p id="2815bae0-dc9d-80e5-ad45-e9b1f85ede8a" class="">We spoke with friends and co-workers who tried ditching their phones in the morning to avoid scrolling endlessly. One friend- Michael (32)- left his phone charging in another room and used a traditional alarm clock. He described mornings as &quot;more peaceful&quot; without notifications pulling his attention, but he ran into problems. He needed basic information—time, weather, his schedule—to get ready properly. He found himself walking back to his room multiple times to ask his Alexa for information, or he&#x27;d go into the day unprepared, wearing the wrong jacket for the weather or losing track of time. Another friend, Sally (27), tried the same thing and felt anxious not knowing if she had morning commitments. She said she felt &quot;disconnected&quot; from her day. Both wanted the calm of a phone-free morning but struggled without quick access to essential information.</p><p id="2815bae0-dc9d-8092-b1cc-fb64b19ba39e" class="">
+</p><table id="2815bae0-dc9d-8064-8c4a-ec2644b3f563" class="simple-table"><tbody><tr id="2815bae0-dc9d-8009-b3fc-c65159fd0ef4"><td id="Wn&lt;n" class="">Type of User</td><td id="RG&lt;T" class="">Activity Observed</td><td id="UUvG" class="">Environment</td><td id="&gt;Cat" class="">Interaction</td><td id="ULnl" class="">Objects</td><td id="E|yt" class="">Emotion</td><td id=";j_A" class="">Interruption Frequency</td></tr><tr id="2815bae0-dc9d-80fc-a309-cad19d0afe72"><td id="Wn&lt;n" class="">University students and early professionals</td><td id="RG&lt;T" class="">Checking phone immediately upon waking and during bathroom mirror routine for time, weather, calendar, and social media.</td><td id="UUvG" class="">Bedrooms, shared bathrooms, personal bathrooms</td><td id="&gt;Cat" class="">Phone propped against mirror or toiletries while doing skincare/ makeup, constant glancing between mirror and screen, scrolling endlessly while lying in bed</td><td id="ULnl" class="">Phone, mirror, alarm, toiletries, makeup</td><td id="E|yt" class="">Stressed, distracted, rushed, frustrated</td><td id=";j_A" class="">Every 2-3 minutes during 10-15 minute mirror routine, 30-45 minutes in bed before getting up.</td></tr><tr id="2815bae0-dc9d-8007-b840-d3c5f567f9c9"><td id="Wn&lt;n" class="">Working professionals (30s-40s)</td><td id="RG&lt;T" class="">Attempting to check essential morning information (time, weather, calendar) but getting pulled into emails, messages, and social media</td><td id="UUvG" class="">Home, bathrooms, bedrooms, getting ready for work</td><td id="&gt;Cat" class="">Picking up phone with intention to check basics, scrolling through multiple apps, feeling compelled to respond to notifications.</td><td id="ULnl" class="">Phone, mirror</td><td id="E|yt" class="">Frustration, scattered, reactive, mentally hijacked, brain fog</td><td id=";j_A" class="">Initial check leads to 15-20 minute distraction, creating rushed morning</td></tr><tr id="2815bae0-dc9d-802e-b9c5-e62506b98d7b"><td id="Wn&lt;n" class="">Phone-free lifestyle people</td><td id="RG&lt;T" class="">Intentionally avoiding phone but lacking essential information</td><td id="UUvG" class="">Home, bathrooms, bedrooms</td><td id="&gt;Cat" class="">Walking to other rooms to check a device/ speak to a voice assistant multiple times to get needed information, going unprepared without information</td><td id="ULnl" class="">Alarm clock, virtual assistant</td><td id="E|yt" class="">Anxiety</td><td id=";j_A" class="">No phone interruptions but multiple trips to get vital information.</td></tr></tbody></table><h2 id="2815bae0-dc9d-8082-916c-f05cc940a199" class="">Identifying The Problem</h2><p id="2815bae0-dc9d-8015-bf89-eacb135fb49e" class="">For the past decade, phone usage has encouraged people to constantly be connected to information (be it easily accessible or not), entertainment and with other people. It is common to see many people carry their phones to every room they enter. This closeness to our smartphones has been integrated into our sleeping and waking routines. There are many studies and peer-reviewed studies showing the negative effects of being on your phone before you sleep, specifically how exposure to short-wavelength light before sleeping disrupts one’s nocturnal melatonin secretion thus impacting sleep, 1(Höhn, Hahn, Gruber, Pletzer, Cajochen &amp; Hoedlmoser, 2024). Even the mere presence of our phones can reduce our available cognitive capacity, 2(Ward, Duke, Gneezy &amp; Bos, 2017), which can lead our morning routines to be disrupted leading to weaker concentration and awareness throughout the rest of the day.</p><blockquote id="2815bae0-dc9d-80e8-be9e-dfcca6a7e94a" class=""><em>“As you transition from sleep to wake, your brain transitions through different brainwave states: from delta waves (deep sleep) to theta waves (lighter sleep) and finally to alpha waves, which are associated with quiet wakefulness.</em></blockquote><blockquote id="2815bae0-dc9d-800e-9006-d34a1ff21de6" class=""><em>When you first wake, your brain is in a state dominated by theta waves, which are associated with relaxation and daydreaming and gently stimulating creativity. Reaching for your phone right away disrupts this natural progression.</em></blockquote><blockquote id="2815bae0-dc9d-800c-a87a-fef4d71b254a" class=""><em>Overloading with stimulating content first thing can thrust your brain into beta waves, the state associated with focused attention. While beta waves are great for tackling tasks later in the day, experiencing them too early can leave you feeling scattered and stressed, and prime your brain for distraction throughout the day.”</em></blockquote><ul id="2815bae0-dc9d-802d-a50f-f58ec2875684" class="bulleted-list"><li style="list-style-type:disc"><em>Why You Should Stop Using Your Phone in The Morning, Unplugged. 2024</em></li></ul><p id="2815bae0-dc9d-807b-b27f-ca9021f24b66" class="">From our observations and interviews, we have reached an understanding that everyone is inclined to check their phone when they need to access weather, time and daily schedule information but at the same time they find themselves latched onto the phone more than they anticipated since our phone’s are trying to fight for our time.</p><p id="2815bae0-dc9d-8021-9e93-d5ab168d6380" class="">Our proposed solution, and our aim for this project, is to develop a non-intrusive, and calm technology that aids in a person&#x27;s morning/night routine. This device will be a mirror with all the information that a person generally needs when they are starting their day. It will help elevate the need to check one’s phone first thing in the morning and a mirror is integrated into morning routines offering an unobtrusive start of the day.</p><p id="2815bae0-dc9d-8032-b735-f985db50a840" class="">
+</p><h2 id="2815bae0-dc9d-80a0-9401-c38a8cd83cf1" class="">Developing Personas</h2><h3 id="2815bae0-dc9d-80be-a0f3-c53cfb24b41e" class="">Step 1 Listing Distinguishing Behaviors</h3><figure id="2815bae0-dc9d-8085-b73c-fd3119d2c586" class="image"><a href="image.png"><img style="width:864px" src="image.png"/></a></figure><p id="2815bae0-dc9d-80cd-80f7-f060fa168db1" class="">
+</p><h2 id="2815bae0-dc9d-809d-8816-c07075e7fff3" class="">Step 2 Grouping the Behaviors</h2><table id="2815bae0-dc9d-8033-88c2-e597bd1c859e" class="simple-table"><tbody><tr id="2815bae0-dc9d-805b-94df-fcdfbce69102"><td id="IOuf" class=""><strong>Have a morning hygiene routine</strong></td><td id="&gt;Ah`" class=""><strong>Sets intentions in the morning</strong></td><td id="CkUW" class=""><strong>Prefers to wake up with energy</strong></td></tr><tr id="2815bae0-dc9d-8094-baf3-fb1cfb194ebe"><td id="IOuf" class="">• Brush their teeth first thing<br/>• Wash face after getting up<br/>• Brush their hair<br/>• Showers in the morning<br/>• Go to the bathroom</td><td id="&gt;Ah`" class="">• Meditate in the morning<br/>• Read a book<br/>• Set intentions for the day<br/>• Journal in the morning</td><td id="CkUW" class="">• Jumps out of bed<br/>• Makes coffee first thing<br/>• Eat breakfast after getting up<br/>• Open music with phone in the morning<br/>• Make bed immediately after getting up<br/>• Opens curtains first thing in the morning</td></tr><tr id="2815bae0-dc9d-8060-b3c2-d0a0abdcd9d3"><td id="IOuf" class=""><strong>Organizes the night before</strong></td><td id="&gt;Ah`" class=""><strong>Analogic morning routine</strong></td><td id="CkUW" class=""><strong>Physical activity prioritizers</strong></td></tr><tr id="2815bae0-dc9d-80fe-b792-f99113b79436"><td id="IOuf" class="">• Pack bag the night before<br/>• Prepare clothes the night before<br/>• Prepare commute route the night before</td><td id="&gt;Ah`" class="">• Don’t check anything<br/>• Doesn’t setup alarm<br/>• Mentally estimate time based on light or routine</td><td id="CkUW" class="">• Workouts after getting out of bed<br/>• Do pilates in the morning<br/>• Do yoga in the morning<br/>• Walk dog first thing</td></tr><tr id="2815bae0-dc9d-80bc-8a1d-f15e910752a1"><td id="IOuf" class=""><strong>Mirror Checking Behaviors</strong></td><td id="&gt;Ah`" class=""><strong>Checks phone in the morning</strong></td><td id="CkUW" class=""><strong>Changes settings of device</strong></td></tr><tr id="2815bae0-dc9d-80ea-8702-dd269bd4492e"><td id="IOuf" class="">• Check the mirror in their bedroom<br/>• Checks the mirror in the bathroom</td><td id="&gt;Ah`" class="">• Check their phone in the first 30min<br/>• Check their phone first thing<br/>• Check phone while doing another task (brushing teeth, hair etc..)<br/>• Check calendar/schedule first thing<br/>• Check notification before getting out of bed<br/>• Open weather app when first unlocks phone</td><td id="CkUW" class="">• Disable notification at night and enable in the morning<br/>• Turn off silence mode on devices</td></tr><tr id="2815bae0-dc9d-80ab-9018-e3a97060fd4e"><td id="IOuf" class=""><strong>Wellness-oriented people</strong></td><td id="&gt;Ah`" class=""><strong>Uses voice assistant when they wake up</strong></td><td id="CkUW" class=""><strong>Organized in the morning</strong></td></tr><tr id="2815bae0-dc9d-80df-b19e-ed3bdc252e62"><td id="IOuf" class="">• Use light therapy lamp for seasonal depression<br/>• Take morning medications<br/>• Avoid screens for the first hour<br/>• Sleep with curtains closed <br/>• Puts phone away from bed</td><td id="&gt;Ah`" class="">• Ask voice assistant for time<br/>• Ask voice assistant for weather<br/>• Open music via voice assistant in the morning</td><td id="CkUW" class="">• Pack bag in the morning<br/>• Choose outfit before checking weather/time<br/>• Choose commute route before checking weather/time</td></tr><tr id="2815bae0-dc9d-808f-b530-fe3b4600e927"><td id="IOuf" class=""><strong>Checks Time</strong></td><td id="&gt;Ah`" class=""><strong>Prefers to wake up lazily</strong></td><td id="CkUW" class=""><strong>Checks information in the morning</strong></td></tr><tr id="2815bae0-dc9d-8013-a713-e0924f48e4c1"><td id="IOuf" class="">• Glance at wrist digital watch<br/>• Glance at mechanical wrist watch<br/>• Glance at physical clock<br/>• Open phone for time, no unlock</td><td id="&gt;Ah`" class="">• Slides out of bed<br/>• Rolls around in bed<br/>• Procrastinate the day by scrolling<br/>• Stays in bed until the next alarm<br/>• Scroll on phone in bed<br/>• Scroll on phone after getting out of bed<br/>• Puts phone close to bed<br/>• Leave bed unmade</td><td id="CkUW" class="">• Choose commute route before checking weather/time<br/>• Check emails before getting out of bed<br/>• Check news headlines in the morning<br/>• Check calendar/schedule first thing</td></tr></tbody></table><figure id="2815bae0-dc9d-80dc-8911-c3d2be19f08b" class="image"><a href="image%201.png"><img style="width:816px" src="image%201.png"/></a></figure><p id="2815bae0-dc9d-8094-b5c0-f1a7406d0e61" class="">
+</p><h3 id="2815bae0-dc9d-8015-bfb5-c7900e0709be" class="">Step 3 Naming The Groups</h3><ul id="2815bae0-dc9d-8029-ba36-e19a67d38a72" class="toggle"><li><details open=""><summary><mark class="highlight-blue_background">The Pressed Scheduler</mark></summary><p id="2815bae0-dc9d-8046-8681-f0db180f987f" class="">This group is focused on efficiency and saving time. They have to deal with multiple tasks in the morning and rush through their routines. Their mornings often feel short and they prioritize getting everything done quickly before heading out.</p></details></li></ul><ul id="2815bae0-dc9d-80ee-a7ec-c3f7d97022bd" class="toggle"><li><details open=""><summary><mark class="highlight-purple_background">The Digital Native</mark></summary><p id="2815bae0-dc9d-808d-b44c-e891980ac90c" class="">This group integrates technology into nearly every part of their morning. From checking their phone to using a voice assistant, they heavily rely on digital tools to stay organized and informed. Their routines are built around convenience and connectivity.</p></details></li></ul><ul id="2815bae0-dc9d-801c-b912-c61d24028bfa" class="toggle"><li><details open=""><summary><mark class="highlight-pink_background">The Traditional Routinist</mark></summary><p id="2815bae0-dc9d-8061-90b4-f9538fc885d4" class="">This group sticks to simple habits. Their mornings often revolve on listening or reading traditional sources. They value familiarity, consistency and straightforward routines without relying on technology.</p></details></li></ul><ul id="2815bae0-dc9d-80ef-875f-ed699b26b739" class="toggle"><li><details open=""><summary><mark class="highlight-red_background">The Active Achiever</mark></summary><p id="2815bae0-dc9d-8035-96b1-ebeea74d752e" class="">This group starts the day with energy and movement. Whether exercising, stretching or preparing for a productive day, they prioritize physical activity and goal setting. They see the morning as an opportunity to boost motivation and stay disciplined.</p></details></li></ul><p id="2815bae0-dc9d-8042-9607-e960612471f1" class="">
+</p><h2 id="2815bae0-dc9d-8061-8f38-d44d44105560" class="">Personas</h2><h3 id="2815bae0-dc9d-80ac-bbe5-fd5fd644b8d8" class="block-color-blue_background">Laura - The Pressed Scheduler</h3><div id="2825bae0-dc9d-8091-8ef2-e2f330687935" class="column-list"><div id="2825bae0-dc9d-80aa-88ef-fcb831a919de" style="width:50%" class="column"><figure id="2825bae0-dc9d-8044-a225-feb9e825137a" class="image"><a href="lina.jpg"><img style="width:240px" src="lina.jpg"/></a></figure></div><div id="2825bae0-dc9d-800d-850d-edf8c8a6df94" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2815bae0-dc9d-80c6-81be-f5a7ef82dab6"><div style="font-size:1.5em"><span class="icon">👥</span></div><div style="width:100%"><p id="2815bae0-dc9d-802c-b3c2-fe34d7aa768d" class="">Age: 30</p><p id="2815bae0-dc9d-808e-b4ec-f4a81b136d72" class="">Gender: Female</p><p id="2815bae0-dc9d-8030-b04d-c77e5dc0dcef" class="">Location: Vancouver</p><p id="2815bae0-dc9d-80f2-ad91-c4e0311a5fcd" class="">Education: Engineering Physics at UBC</p><p id="2815bae0-dc9d-800a-8c50-f51d47eabce5" class="">Profession: Senior Consultant</p><p id="2815bae0-dc9d-807b-b8fc-e5922f69eb35" class="">Hobbies: Camping, crocheting</p><p id="2815bae0-dc9d-806f-86d8-d0aa7f15a662" class="">Language(s): English</p></div></figure></div></div><ul id="2815bae0-dc9d-80e8-816c-f16432f3b393" class="bulleted-list"><li style="list-style-type:disc">Laura is a 30-year-old senior consultant in Vancouver who values efficiency and saving time. Her demanding job with client meetings and tight deadlines means mornings are always rushed. She wakes up at 6:30 AM and immediately checks her phone for the time, weather, and schedule. Even though she prepares her clothes and bag the night before, she double-checks everything to stay on track. While brushing her teeth and doing skincare in front of the mirror, her phone sits on the counter beside her. She constantly glances at it to check the time, review her calendar, and read overnight emails. Notifications often pull her attention, stretching her 30-minute routine into 45. She checks the clock repeatedly, worried about missing her bus. Laura tries to complete multiple tasks quickly before heading out. Efficiency is her top priority, but her phone often slows her down.</li></ul><p id="2815bae0-dc9d-8033-b113-db437fa9bfc4" class="">
+</p><h3 id="2815bae0-dc9d-80a3-81eb-dab99aed71b8" class="block-color-purple_background">Diego - The Digital Native</h3><div id="2825bae0-dc9d-80d0-ad9a-e0d8ca1017bd" class="column-list"><div id="2825bae0-dc9d-803a-bd76-d2298e15ec52" style="width:50%" class="column"><figure id="2825bae0-dc9d-80d2-932f-fe141a01fcc6" class="image"><a href="diego.jpg"><img style="width:240px" src="diego.jpg"/></a></figure></div><div id="2825bae0-dc9d-80e6-8e4c-dd1a8197d92b" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2815bae0-dc9d-80b6-a073-e6bf575ab961"><div style="font-size:1.5em"><span class="icon">👥</span></div><div style="width:100%"><p id="2815bae0-dc9d-806b-96ae-d4e07e22c5e1" class="">Age: 24</p><p id="2815bae0-dc9d-80f8-a0c6-f6b1ac20ab0f" class="">Gender: Male</p><p id="2815bae0-dc9d-80a3-b89d-efe5ae9972f7" class="">Location: Montreal</p><p id="2815bae0-dc9d-809d-a275-e58d36f2cc6a" class="">Education: Computer Science at McGill University</p><p id="2815bae0-dc9d-8048-8f89-cb3bc5ff40b9" class="">Profession: Mobile Developer (wfh)</p><p id="2815bae0-dc9d-801c-9ada-d3804d4c2de2" class="">Hobbies: Reviewing technology, coding, skiing</p><p id="2815bae0-dc9d-8065-b840-e5b456628adb" class="">Languages: English, French, Spanish</p></div></figure></div></div><ul id="2815bae0-dc9d-80e0-b8ba-fe950ff3070a" class="bulleted-list"><li style="list-style-type:disc">Diego is a 24-year-old mobile developer in Montreal who works remotely for a tech startup. He grew up with technology and uses it in every part of his life. His mornings start with his phone alarm at 8:00 AM, followed by scrolling through Instagram and TikTok. What begins as a quick check often turns into 20–30 minutes of watching short videos. Even in the bathroom, he props his phone against the mirror and keeps scrolling while brushing his teeth. He jumps between social media, Slack messages, and his calendar, making it hard to focus. This routine leaves him with brain fog and causes him to start work late and distracted. Diego knows his phone use is hurting his productivity but struggles to break the cycle.</li></ul><h3 id="2815bae0-dc9d-808c-99ea-dd264c1c0cf1" class="block-color-pink_background">Adel - The Traditional Routinist</h3><div id="2825bae0-dc9d-8088-8197-d16f4736ec91" class="column-list"><div id="2825bae0-dc9d-80a9-afcb-d11bfb9e1635" style="width:50%" class="column"><figure id="2825bae0-dc9d-8073-8c7f-c5ca27d01e96" class="image"><a href="df56af31-4427-4804-8349-77c9c16dd0d0.png"><img style="width:300.6369426751593px" src="df56af31-4427-4804-8349-77c9c16dd0d0.png"/></a></figure></div><div id="2825bae0-dc9d-8068-8747-e9582242099c" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2815bae0-dc9d-809c-9376-da0a08ee1ccf"><div style="font-size:1.5em"><span class="icon">👥</span></div><div style="width:100%"><p id="2815bae0-dc9d-8031-9388-f94341684486" class="">Age: 63</p><p id="2815bae0-dc9d-805b-8dd0-f5f5451e36c5" class="">Gender: Male</p><p id="2815bae0-dc9d-800b-9a34-f949d46b76a7" class="">Location: Toronto</p><p id="2815bae0-dc9d-80a9-8f23-f6dc86b08cfe" class="">Profession: Tailor</p><p id="2815bae0-dc9d-8033-ac26-e4154532e7f9" class="">Hobbies: Reading, Music, cooking</p><p id="2815bae0-dc9d-8063-9d52-d13484a41df3" class="">Languages: English, French</p></div></figure><p id="2825bae0-dc9d-806e-bff1-c1d1fc40753e" class="">
+</p></div></div><ul id="2815bae0-dc9d-8072-baf6-c81370d490c4" class="bulleted-list"><li style="list-style-type:disc">Adel is a 63-year-old tailor in Toronto who has lived in Canada for over 30 years. He runs a small tailoring shop and prefers a simple, traditional lifestyle. He uses a flip phone only for calls and texts and has no interest in modern technology. His mornings start at 6:00 AM with a traditional alarm clock and a glance at the time before heading to the bathroom. He follows a steady hygiene routine, checking the wall clock to stay on schedule. While getting ready, he listens to the radio for news and weather updates. Afterward, he enjoys tea and reads the newspaper before work. Adel values calm, consistency, and a distraction-free morning, though he sometimes misses timely updates.</li></ul><h3 id="2815bae0-dc9d-801f-91a9-f1b573bffb59" class="block-color-orange_background">Fatima - The Active Achiever</h3><div id="2825bae0-dc9d-8023-8686-e083e29faef2" class="column-list"><div id="2825bae0-dc9d-80f3-b344-f7c83afce09c" style="width:50%" class="column"><figure id="2825bae0-dc9d-801d-9454-ea6757e1f76e" class="image"><a href="fatima.jpg"><img style="width:240px" src="fatima.jpg"/></a></figure></div><div id="2825bae0-dc9d-80b1-a12e-e4d24bcc0eaf" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2815bae0-dc9d-8090-8f47-eff66af9cff4"><div style="font-size:1.5em"><span class="icon">👥</span></div><div style="width:100%"><p id="2815bae0-dc9d-80bd-9d00-cf2813f54400" class="">Age: 41</p><p id="2815bae0-dc9d-80b5-af24-ca9c942a648c" class="">Gender: Female</p><p id="2815bae0-dc9d-8050-8812-fa6c2eb29fee" class="">Location: Montreal</p><p id="2815bae0-dc9d-8086-9801-c3b9388c01e2" class="">Profession: Financial Analyst</p><p id="2815bae0-dc9d-80cf-8b37-da9efe99dce2" class="">Hobbies: Outdoor activities, fitness, cooking</p></div></figure></div></div><ul id="2815bae0-dc9d-806a-93b1-ffc7ff111b01" class="bulleted-list"><li style="list-style-type:disc">Fatima is a 41-year-old financial analyst in Montreal balancing a demanding job and raising two children. She wakes up at 5:30 AM to make time for herself before the family day begins. Her mornings always start with a 30-minute workout, which helps her manage stress and stay focused. After exercising, she showers and gets ready at the bathroom mirror. While doing skincare and getting dressed, she checks the time, weather, and her calendar on her phone to stay on schedule. She prepares most things the night before, but mornings still feel rushed as she tries to fit everything in. Checking her phone sometimes leads to distractions, like reading news or responding to emails, cutting into her time. Fatima values discipline and productivity, and her mornings are designed to start the day with energy and purpose.</li></ul><p id="2815bae0-dc9d-80d8-815d-c58855e32e70" class="">
+</p><p id="2815bae0-dc9d-80fc-b0fa-d47db543dd09" class="">
+</p><h2 id="2815bae0-dc9d-80ba-a56d-ed85360845c6" class="">Illustrating a Use Case Scenario</h2><ul id="2815bae0-dc9d-8021-ac97-e94108c39fcd" class="bulleted-list"><li style="list-style-type:disc">Using Laura for demonstrating our use case scenario; since her job is demanding, Laura often rushes through the morning. She checks her phone for the time, weather and schedule. Notifications from emails, and messages distract her while doing her routine. The phone catches her attention everytime a notification pops-up, she loses 1-2 minutes for each message thus streching her time. </li></ul><ul id="2815bae0-dc9d-800b-92b3-cdd433e3081d" class="bulleted-list"><li style="list-style-type:disc">Laura decides to try Luma. She puts Luma on her bedroom desk. Since it is easy to move around and hang. She can orient the mirror in the way she wants. She plugs in the mirror. Her location thus the weather and time is synced when the mirror is booted up and connected to the Wi-Fi which would used IP Geolocation. To sync her schedule which is on Google Calender, she uses the web server the mirror hosts. Now, Laura’s routine consists of leaving her phone on the counter or in her bag, keeping her mind focused on the task at hand without distractions from notifications. She looks at the mirror while doing her makeup. She reads her reminders and the weather, and knows if she needs to bring an umbrella or not. She also has a quick reminder that her meeting is at 9AM. The display is calm and minimal—no buzzing, no pop-ups, no distractions. She stays focused on getting ready, and her routine flows smoothly. By 7:10 AM, she&#x27;s dressed, her lunch is packed, and she&#x27;s heading out the door on time and composed.</li></ul><p id="2815bae0-dc9d-80ea-9269-c347edee7941" class="">
+</p><h2 id="2815bae0-dc9d-80b4-87fc-ea64f9fc953b" class="">Finding Related Products</h2><p id="2815bae0-dc9d-8033-903f-e899617c7ae0" class="">There are several products on the market designed to help people access morning information and reduce phone dependency. However, most of these solutions either don’t integrate into the natural routine of checking the mirror, require too much technical expertise, are very expensive, or still create distractions via notifications and features that pull users away from their morning tasks. </p><p id="2815bae0-dc9d-8075-ae6d-ef39cc5b91cc" class="">
+</p><p id="2815bae0-dc9d-80f7-89a7-ce5419dc8fa4" class=""><strong>Amazon Echo Show</strong></p><figure id="2815bae0-dc9d-80ab-940d-c282bb156546" class="image"><a href="amazon.jpg"><img style="width:192px" src="amazon.jpg"/></a></figure><p id="2815bae0-dc9d-8087-91a5-f0210adc0406" class="">This product is described as a “built-in smart home hub” which has Alexa+. An assistant for everyday routine like calender at a glance. You can pair other devices and view camera feeds. </p><p id="2815bae0-dc9d-80f4-8a7f-d1f38f93c7e9" class="">
+</p><p id="2815bae0-dc9d-8097-9b64-f7694605af72" class=""><strong>Kohler Verdera Voice Lighted Mirror</strong></p><figure id="2815bae0-dc9d-809d-96b7-dd27410f5a08" class="image"><a href="GBH_SQTemplate.webp"><img style="width:192px" src="GBH_SQTemplate.webp"/></a></figure><p id="2815bae0-dc9d-801d-b5d1-e4d820c7247e" class="">This Amazon product is a smart mirror that is integrated with Alexa. You can use voice commands to play music, as the time, learn about the weather and more. </p><p id="2815bae0-dc9d-8072-bd9e-ce9324b55138" class="">
+</p><p id="2815bae0-dc9d-80c3-bc95-f58000748fee" class=""><strong>DAKBoard Display</strong></p><figure id="2815bae0-dc9d-8040-8ce5-ec0143f42186" class="image"><a href="v2-plus-front-large_1024x10242x.webp"><img style="width:144px" src="v2-plus-front-large_1024x10242x.webp"/></a></figure><p id="2815bae0-dc9d-80f9-ac77-f7f657dac2c2" class="">This product is a wall display that displays the users clander, photos, weather, and “lots more”. It is described as great for home and office. It is 55 x 33 cm. </p><p id="2815bae0-dc9d-80f2-a84b-ec4152f43a92" class="">
+</p><h3 id="2815bae0-dc9d-8007-8655-e98a00f83935" class=""><strong>Limitations</strong></h3><ul id="2815bae0-dc9d-806d-896d-d00820b8fe48" class="bulleted-list"><li style="list-style-type:disc">Distraction-Prone Design<ul id="2815bae0-dc9d-802f-977e-f0b6b71d8c27" class="bulleted-list"><li style="list-style-type:circle">Smart displays like Amazon Echo Show offer more than essential information. They display news headlines, videos, advertisements, app notifications, and constantly try to grab the user’s attention by suggesting new content. This creates the same distraction cycle users experience with their phones. </li></ul></li></ul><ul id="2815bae0-dc9d-80da-8fc0-cec6b1f80da3" class="bulleted-list"><li style="list-style-type:disc">Placement/Integration Issues<ul id="2815bae0-dc9d-805e-a365-eaca13e14e06" class="bulleted-list"><li style="list-style-type:circle">Like Echo show, smart displays aren’t as dyanmic as a mirror or wall display. They are designed to sit on countertops or nightstands, need valuable counter space, and can’t be hung on walls like mirrors. This forces a user to go out of their way to check the display, instead of being able to see the display naturally when they are getting ready. </li></ul><ul id="2815bae0-dc9d-802c-afa2-e6944b8907e9" class="bulleted-list"><li style="list-style-type:circle">The DAkboard, is a good option for not choosing smart assistant like Amazon has, but it does not function as a mirror like we envision. It is also web-based thus the user must remember to open thre browser. The setup of the display can be a hastle since they sell CPUs and chips for the display which can confuse the customer who would just like to use the display immediatly. </li></ul></li></ul><ul id="2815bae0-dc9d-8047-bb1f-e9b35074fdc2" class="bulleted-list"><li style="list-style-type:disc">Feature Overload<ul id="2815bae0-dc9d-806a-8083-f7f172543aae" class="bulleted-list"><li style="list-style-type:circle">Like the Kohler Verdera, These mirrors often offer a lot of features, like integrated voice assistants, bluetooth speakers, and adjustable LED lightning. While these may be appealing, they add complexity and distraction. The voice assistant component exposes users to platforms designed to sell products and push content.</li></ul></li></ul><p id="2815bae0-dc9d-80ff-8a15-c69589c98b68" class="">
+</p><h2 id="2815bae0-dc9d-805b-82de-e891eef65b9a" class="">Comparing Products</h2><h3 id="2815bae0-dc9d-80a8-9888-efd250b5e773" class="">Luma vs Amazon Echo Show</h3><p id="2815bae0-dc9d-806f-bf44-d6ef6a3f6fde" class="">Unlike the Echo Show, which relies heavily on voice commands, Luma provides all essential morning <strong>information visually and passively</strong>. For the pressed scheduler, this means checking the calendar, weather and time without interrupting their rushed routine. Digital natives stay informed without being pulled into voice interactions or notifications. Traditional routinists enjoy a consistent, low-effort display integrated into their familiar habits, while active achievers can glance at their schedule during exercise or preparation, maintaining momentum without distraction.</p><h3 id="2815bae0-dc9d-8004-9935-d8b90ccf0ad3" class="">Luma vs Kohler Verdera Voice Lighted Mirror</h3><p id="2815bae0-dc9d-8006-9759-f9debf0acc43" class="">Unlike the Verdera, which relies on voice commands, that may disturb routines by requiring a person to remember all the information that Alexa has to offer, Luma provides all essential information—time, weather, and Google Calendar events <strong>passively and at a glance</strong>. For the pressed scheduler, this means checking the day’s plan without wasting time on interactions. Digital natives stay informed without being pulled into notifications or device switching. Traditional routinists benefit from a consistent, low-effort display that integrates naturally into their habits, while active achievers can maintain their physical morning activities without interruption. By delivering a centralized, glanceable dashboard directly in the mirror, Luma supports a more <strong>efficient, non-distracting, and context-aware morning routine</strong> for all user types.</p><h3 id="2815bae0-dc9d-8049-b2f5-c34a471cc4ec" class="">Luma vs Dakboard</h3><p id="2815bae0-dc9d-80c8-81b5-edefec1afafa" class="">Dakboard requires a separate device and web-based setup, pulling users out of their morning routine. The smart mirror keeps information directly in line of sight, improving efficiency and reducing distractions. Pressed schedulers can optimize their limited time, while digital natives avoid constantly switching between phone and dashboard. Traditional routinists appreciate the effortless integration into their simple habits, and active achievers can stay physically active while seeing calendar and weather updates without delay.</p><p id="2815bae0-dc9d-8084-8f11-c7f46f2a948a" class="">
+</p><h2 id="2815bae0-dc9d-804b-b02a-dd6a67e93e5d" class="">Designing at a High-Level</h2><p id="2815bae0-dc9d-8049-926d-ddd09bc2b243" class="">The design architecture components:</p><p id="2815bae0-dc9d-8094-b85f-e897496b992e" class=""><mark class="highlight-default"><strong>Hardware Assembly:</strong></mark><mark class="highlight-default"> We will source and assemble the physical components of the mirror. This includes mounting the HDMI monitor behind the one-way mirror sheet within a wooden frame. The RaspberryPi will be embedded into the frame, and connected to the monitor via the HDMI cable. All components will be wired to the power supply.</mark></p><p id="2815bae0-dc9d-806d-a84e-f159dfaeb57a" class=""><strong>User Interface:</strong> We will use Figma to design the UI that appears on the mirror. This means creating a minimal, calm layout showing time, weather, and reminders with appropriate typography, spacing, and positioning. The design will prioritize readability from several feet away and avoid distracting elements like bright colors. We will gather feedback from potential users and iterate on the design to ensure that it meets their needs for a distraction-free morning routine.</p><p id="2815bae0-dc9d-809d-a6a8-f6969a513e50" class=""><strong>Display Software:</strong> We will develop the core display via using Python on the RaspberryPi.</p><p id="2815bae0-dc9d-805b-a1d7-f1cd39455c7c" class=""><strong>API Integration:</strong> Using Python, we will integrate external APIs to fetch real-time data. The Weather API (OpenWeatherMap) will provide current weather conditions and forecasts. The calendar API (Google Calendar) will retrieve the user’s daily schedule and reminders. These integrations will run on the RaspberryPi and update the display at regular intervals.</p><p id="2815bae0-dc9d-8040-bd67-c9942ce2b523" class=""><strong>Brightness Control Module</strong>: We will implement a Python script to let the user adjust the display brightness. This is so that users can adjust it to their needs, as some users may prefer brighter screens if they are placing the mirror in a bright area, while others may prefer dim screens.</p><p id="2815bae0-dc9d-80ae-80ea-dd16371d5db6" class=""><strong>Display Timer Script:</strong> We will create a scheduling system that allows the user to control when the display turns on and off. This is to avoid unnecessary light during sleeping hours.</p><p id="2815bae0-dc9d-80e8-8e4f-cbf61a5fb3f8" class=""><strong>Setup and Configuration:</strong> We will develop a simple configuration interface that is easily understandable to allow users to initially sync their calendar, set their preferred weather location, and adjust timing preferences.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2815bae0-dc9d-802e-a250-d1fe1ec2d245"><div style="font-size:1.5em"><span class="icon">⚙</span></div><div style="width:100%"><p id="2815bae0-dc9d-8013-a569-f6d982f0d2a6" class="">We will utilize open-souce SmartMirror as a guide for development.</p></div></figure><figure id="2815bae0-dc9d-803f-9817-e75f4f9b0718" class="image"><a href="highlvl.jpg"><img style="width:709.9896240234375px" src="highlvl.jpg"/></a></figure><p id="2815bae0-dc9d-80a6-9043-dfe250ca47e9" class="">
+</p><p id="2815bae0-dc9d-80fc-8756-cd31d813f671" class="">
+</p><h2 id="2815bae0-dc9d-80ca-b3b3-d1659ecc347c" class="">Justifying Feasability</h2><h3 id="2815bae0-dc9d-8056-924d-fe505a4f86d3" class="">Team Member Skills</h3><ol type="1" id="2815bae0-dc9d-802d-a464-e152a6a130d1" class="numbered-list" start="1"><li><strong>Saif:</strong><ol type="a" id="2815bae0-dc9d-80a6-b964-c503bbef1063" class="numbered-list" start="1"><li>Has experience in designing front-end systems for mobile apps. This will be useful for developing the software interface and integrating the APIs</li></ol><ol type="a" id="2815bae0-dc9d-8024-8f8e-d0b1b7334061" class="numbered-list" start="2"><li>Familiar with Git and Github for version control</li></ol><ol type="a" id="2815bae0-dc9d-8059-b072-fda4fb6647f7" class="numbered-list" start="3"><li>Experience with HTML, CSS, JavaScript, and Python- all of which are needed for this project.</li></ol></li></ol><ol type="1" id="2815bae0-dc9d-80d7-9d83-c5f3d6c8f5cd" class="numbered-list" start="2"><li><strong>Ida:</strong><ol type="a" id="2815bae0-dc9d-80b0-945d-c665037d54b5" class="numbered-list" start="1"><li>Software engineering experience</li></ol><ol type="a" id="2815bae0-dc9d-8073-a24b-c4ca67da59f8" class="numbered-list" start="2"><li>Member of McGill Robotics, which involves working with software, hardware integration. This is directly applicable to Luma.</li></ol><ol type="a" id="2815bae0-dc9d-8026-a265-e9d7d4c09eb6" class="numbered-list" start="3"><li>Familiar with Git and GitHub.</li></ol><ol type="a" id="2815bae0-dc9d-8016-885c-d0d761077b6f" class="numbered-list" start="4"><li>Experience with Linux-based systems (Raspberry Pi OS)</li></ol></li></ol><ol type="1" id="2815bae0-dc9d-807f-9dd8-c0f395db3f75" class="numbered-list" start="3"><li><strong>Melissa:</strong><ol type="a" id="2815bae0-dc9d-801f-8797-c033b2f3d77a" class="numbered-list" start="1"><li>Has robotics engineering experience, including working with microcontrollers, displays, and hardware assembly</li></ol><ol type="a" id="2815bae0-dc9d-80e9-8d90-c18c0ea7eaa4" class="numbered-list" start="2"><li>Familiar with wiring, circuit design, and integrating electronic components.</li></ol><ol type="a" id="2815bae0-dc9d-8086-9de2-eaa4d2db1796" class="numbered-list" start="3"><li>Experience with Python scripting for hardware control.</li></ol></li></ol><h3 id="2815bae0-dc9d-8076-9b6a-d3e35b9d045b" class="">Hardware and Software Requirements</h3><ul id="2815bae0-dc9d-80fb-a27f-cf5def89640d" class="bulleted-list"><li style="list-style-type:disc">One-way mirror sheet: Can be purchased easily</li></ul><ul id="2815bae0-dc9d-80ef-abf3-d7b19b4b1c87" class="bulleted-list"><li style="list-style-type:disc">Small HDMI monitor: Widely available and affordable</li></ul><ul id="2815bae0-dc9d-800e-8b7d-e8878fa059e8" class="bulleted-list"><li style="list-style-type:disc">Raspberry Pi with Wifi: Well supported platform with an active community and a plethora of documentation </li></ul><ul id="2815bae0-dc9d-80ee-9d6c-f5aaf8102481" class="bulleted-list"><li style="list-style-type:disc">Wooden frame: Can be built or purchased from craft stores</li></ul><ul id="2815bae0-dc9d-8042-a9e0-e62e1548e578" class="bulleted-list"><li style="list-style-type:disc">Power supply and cables: Standard widely available components</li></ul><table id="2815bae0-dc9d-8042-8e01-c9c1dc09dd17" class="simple-table"><tbody><tr id="2815bae0-dc9d-80ce-a688-cff3eadc287c"><td id="oQKf" class=""><strong>Task</strong></td><td id=":[]\" class=""><strong>Estimated Effort (hours)</strong></td></tr><tr id="2815bae0-dc9d-80af-ba0d-f29501d8be9e"><td id="oQKf" class="">Research and detail hardware requirements</td><td id=":[]\" class="">4</td></tr><tr id="2815bae0-dc9d-8040-afcb-d44057839c49"><td id="oQKf" class="">Design UI mockups in Figma</td><td id=":[]\" class="">6</td></tr><tr id="2815bae0-dc9d-804c-bf7e-cb15c2669ee0"><td id="oQKf" class="">Assemble physical mirror (frame, monitor, mirror sheet)</td><td id=":[]\" class="">8</td></tr><tr id="2815bae0-dc9d-8019-9652-cc63c2572794"><td id="oQKf" class="">Set up Raspberry Pi and install OS</td><td id=":[]\" class="">3</td></tr><tr id="2815bae0-dc9d-8078-8672-fc009fbda89f"><td id="oQKf" class="">Develop Python script for display interface</td><td id=":[]\" class="">12</td></tr><tr id="2815bae0-dc9d-80ea-89bd-ecf95a944689"><td id="oQKf" class="">Integrate weather API (OpenWeatherMap)</td><td id=":[]\" class="">5</td></tr><tr id="2815bae0-dc9d-80ba-8614-dcff793b9fbd"><td id="oQKf" class="">Integrate calendar API (Google Calendar)</td><td id=":[]\" class="">5</td></tr><tr id="2815bae0-dc9d-801b-a1dd-e9c550f1a9d4"><td id="oQKf" class="">Implement display timer and brightness control script</td><td id=":[]\" class="">8</td></tr><tr id="2815bae0-dc9d-809d-bbfd-eb4633e6a2b8"><td id="oQKf" class="">Test and debug hardware-software integration</td><td id=":[]\" class="">10</td></tr><tr id="2815bae0-dc9d-807d-ab2e-eb8e13ba9fec"><td id="oQKf" class="">User testing and refinements</td><td id=":[]\" class="">8</td></tr><tr id="2815bae0-dc9d-80a0-907d-d00c3b86932f"><td id="oQKf" class="">Documentation and final presentation preparation</td><td id=":[]\" class="">6</td></tr><tr id="2815bae0-dc9d-80e9-8d6a-c8c39715b53a"><td id="oQKf" class=""></td><td id=":[]\" class="">TOTAL: 75</td></tr></tbody></table><p id="2815bae0-dc9d-8059-beb7-ffab51350549" class="">Our team will be able to build our proposed solution because we have all of the necessary hardware and software skills. Our estimated effort royals 75 hours, which averages 25 hours per team member.</p><p id="2815bae0-dc9d-80c3-85d8-c6db2b665b67" class="">
+</p><h2 id="2815bae0-dc9d-801b-869c-cb2f560674c7" class=""><strong>REB Ethics Table for HCI</strong></h2><ol type="1" id="2815bae0-dc9d-802d-9008-ea59b36b35d3" class="numbered-list" start="1"><li><strong>Group/student names</strong><ol type="a" id="2815bae0-dc9d-80c1-a547-c9b2bd204b89" class="numbered-list" start="1"><li>Saif Shahin</li></ol><ol type="a" id="2815bae0-dc9d-80c5-9c3d-c85cafeb2345" class="numbered-list" start="2"><li>Ida Su Ozdemir</li></ol><ol type="a" id="2815bae0-dc9d-8080-9822-e5cdc4a59541" class="numbered-list" start="3"><li>Melissa Salazar Cruz</li></ol></li></ol><ol type="1" id="2815bae0-dc9d-8088-8af7-c3d70cf3ee3f" class="numbered-list" start="2"><li><strong>Title of Project</strong><ol type="a" id="2815bae0-dc9d-8038-9469-d2dbc04407f0" class="numbered-list" start="1"><li>Luma</li></ol></li></ol><ol type="1" id="2815bae0-dc9d-8000-ace5-e37622bd45bb" class="numbered-list" start="3"><li><strong>Project/Study Description (2-3 sentences)</strong><ul id="2815bae0-dc9d-8076-be2a-f2defdfd4387" class="bulleted-list"><li style="list-style-type:disc">This project investigates how individuals manage morning routines and access essential information (time, weather, reminders) while getting ready. We will observe and interview participants about their morning habits, phone usage patterns, and information-checking behaviors to inform the design of Luma, a smart mirror that displays essential morning information without the distracting elements of smartphones. The study aims to understand user needs and pain points to create a calm, minimally invasive technology solution for morning preparation.</li></ul></li></ol><p id="2815bae0-dc9d-8099-b43b-d33638f2c2fd" class="">
+</p><ol type="1" id="2815bae0-dc9d-80fb-a7eb-e56d115ff82d" class="numbered-list" start="4"><li><strong>Number and type of participants (gender, age range, other particulars such as athletes, farmers, musicians, etc.) </strong><p id="2815bae0-dc9d-804d-ba8d-cecda890d35d" class="">Approximately 10-15 participants across diverse demographics:</p><ul id="2815bae0-dc9d-80c3-a384-c5fe8b96453b" class="bulleted-list"><li style="list-style-type:disc">Age range: 19-65 years old</li></ul><ul id="2815bae0-dc9d-80e0-bfa7-d4097b29b742" class="bulleted-list"><li style="list-style-type:disc">Gender: All genders</li></ul><ul id="2815bae0-dc9d-8003-a888-db486308162b" class="bulleted-list"><li style="list-style-type:disc">Participant types include: university students, young professionals, remote workers, parents, older adults, fitness enthusiasts, and individuals with traditional (analog) routines</li></ul><ul id="2815bae0-dc9d-80d7-b1b3-d39e1d4de544" class="bulleted-list"><li style="list-style-type:disc">Participants should have established morning routines and use mirrors as part of their daily preparation</li></ul></li></ol><p id="2815bae0-dc9d-8042-9f1a-c558e4b01772" class="">
+</p><ol type="1" id="2815bae0-dc9d-8050-b695-f5887e9c0699" class="numbered-list" start="5"><li><strong>How and from where are they recruited?</strong><p id="2815bae0-dc9d-806e-b08e-e54b0870b894" class="">Participants will be recruited through:</p><ul id="2815bae0-dc9d-8013-ba30-de759f18f456" class="bulleted-list"><li style="list-style-type:disc">Personal networks (friends, family, roommates, coworkers)</li></ul><ul id="2815bae0-dc9d-801d-a735-ed25ee567d17" class="bulleted-list"><li style="list-style-type:disc">University community (McGill students, staff, and faculty through posters, online forums, and class announcements)</li></ul><ul id="2815bae0-dc9d-80fe-976a-e2b814b02d25" class="bulleted-list"><li style="list-style-type:disc">Social media posts and community groups in Montreal</li></ul><ul id="2815bae0-dc9d-80d2-b98f-ce7f1a1691a9" class="bulleted-list"><li style="list-style-type:disc">Workplace connections (colleagues from internships and professional networks)</li></ul><ul id="2815bae0-dc9d-8046-8a0b-c8658955fbda" class="bulleted-list"><li style="list-style-type:disc">Word-of-mouth and snowball sampling</li></ul><p id="2815bae0-dc9d-8035-8784-f339dd3ad5f0" class="">All recruitment materials will clearly describe the study purpose, time commitment, and voluntary nature of participation.</p><p id="2815bae0-dc9d-80ae-aa3c-fe9a72bff28b" class="">
+</p></li></ol><ol type="1" id="2815bae0-dc9d-8067-b6a1-e05e8cc31c30" class="numbered-list" start="6"><li><strong>What risk could this study entail for participants?</strong><p id="2815bae0-dc9d-80ca-bc6a-d37fd399a825" class=""><span style="border-bottom:0.05em solid">Privacy concerns:</span></p><ul id="2815bae0-dc9d-80d3-8e4b-f2680c67f870" class="bulleted-list"><li style="list-style-type:disc">Participants may feel uncomfortable discussing personal morning routines, phone habits, or sharing details about their living spaces</li></ul><p id="2815bae0-dc9d-8078-b1c3-f1a69a181aec" class=""><span style="border-bottom:0.05em solid">Mild discomfort:</span></p><ul id="2815bae0-dc9d-8049-86f5-d1e8d0bb455e" class="bulleted-list"><li style="list-style-type:disc">Participants may feel self-conscious discussing habits they may perceive as being embarrassing (e.g., excessive phone scrolling, disorganization)</li></ul><p id="2815bae0-dc9d-8052-83fe-ddbc79c6201d" class=""><span style="border-bottom:0.05em solid">Data security:</span></p><ul id="2815bae0-dc9d-80c3-b54b-cc3f60a3f48f" class="bulleted-list"><li style="list-style-type:disc">Risk of personal information (schedules, routines, habits) being inadvertently disclosed</li></ul><p id="2815bae0-dc9d-80fc-a793-d632c5a23b06" class="">
+</p></li></ol><ol type="1" id="2815bae0-dc9d-8048-ad5e-d933645d999b" class="numbered-list" start="7"><li><strong>How can these risks be mitigated?</strong><p id="2815bae0-dc9d-8009-9e32-eebf310b655a" class=""><span style="border-bottom:0.05em solid">Informed consent:</span></p><ul id="2815bae0-dc9d-80fa-9405-c88458bb84a0" class="bulleted-list"><li style="list-style-type:disc">All participants will receive clear information about the study and sign consent forms before participation. They will be informed of their right to withdraw at any time without penalty</li></ul><p id="2815bae0-dc9d-80a4-b8d1-e9e28625da3f" class=""><span style="border-bottom:0.05em solid">Confidentiality:</span></p><ul id="2815bae0-dc9d-808f-bb9d-f0af88210616" class="bulleted-list"><li style="list-style-type:disc">All data will be anonymized. Participants will be assigned pseudonyms, and no identifying information will be included in reports or presentations</li></ul><p id="2815bae0-dc9d-80f7-b4bb-c3142ca3b877" class=""><span style="border-bottom:0.05em solid">Non-judgmental approach:</span></p><ul id="2815bae0-dc9d-802c-bd8e-c11ca6ee915d" class="bulleted-list"><li style="list-style-type:disc">Researchers will maintain a neutral, supportive tone during interviews, re-enforcing that there are no &quot;right&quot; or &quot;wrong&quot; morning routines</li></ul><p id="2815bae0-dc9d-8065-994f-e1c1e07943a9" class=""><span style="border-bottom:0.05em solid">Secure data storage:</span></p><ul id="2815bae0-dc9d-80b1-b3c6-c14b43eef65b" class="bulleted-list"><li style="list-style-type:disc">All recordings, notes, and personal information will be stored on password-protected devices and deleted after project completion</li></ul><p id="2815bae0-dc9d-808b-867b-fc6a3d891ae8" class=""><span style="border-bottom:0.05em solid">Limited scope:</span></p><ul id="2815bae0-dc9d-801f-a6f8-c442dda49736" class="bulleted-list"><li style="list-style-type:disc">Observations will focus only on morning routine behaviors relevant to the project (information-checking, mirror usage) and will not intrude on private or sensitive activities</li></ul><p id="2815bae0-dc9d-8041-8b60-fbccc3b1b8d9" class=""><span style="border-bottom:0.05em solid">Debriefing:</span></p><ul id="2815bae0-dc9d-8042-8bb9-e2adf8d90cfb" class="bulleted-list"><li style="list-style-type:disc">Participants will be debriefed after the study and given the opportunity to ask questions or raise concerns</li></ul></li></ol><p id="2815bae0-dc9d-808e-93c2-f46a473a1e67" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
